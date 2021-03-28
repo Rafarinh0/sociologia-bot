@@ -31,6 +31,14 @@ app.on("guildCreate", guild => {
 });
 
 app.on('message', (msg) => {
+    if((msg.content === `${prefix}help` && msg.member.voice.channel && !msg.author.bot)) {
+        const message = new Discord.MessageEmbed()
+            .setTitle('BOM DIA, AMIGO!')
+            .setDescription('Tenho esses comandos por enquanto: !kerngritando')
+            .setFooter('NÃO COMETA EUTANÁSIA AINDA')
+        msg.reply(message);
+    }
+
     if (msg.content === `${prefix}kerngritando` && msg.member.voice.channel && !msg.author.bot) {
         msg.member.voice.channel.join().then(connection => {
             const dispatcher = connection.play('./assets/sounds/kernmaluco.mp3');
