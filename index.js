@@ -30,4 +30,14 @@ app.on("guildCreate", guild => {
     channel.send(msg);
 });
 
+app.on('message', (msg) => {
+    if (msg.content === `${prefix}kerngritando` && msg.member.voice.channel && !msg.author.bot) {
+        msg.member.voice.channel.join().then(connection => {
+            const dispatcher = connection.play('./assets/sounds/kernmaluco.mp3');
+            msg.reply('oooooooooh OOOOOOOOOOOOH OOOOOOOOOOOOOOOOOOOOOOH')
+            dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
+        });
+    };
+  });
+
 app.login(token);
