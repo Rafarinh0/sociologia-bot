@@ -25,6 +25,10 @@ app.on('message', (msg) => {
             dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
         });
     };
+
+    if (msg.content === `${prefix}kern-saiu-do-prata` && msg.member.voice.channel && !msg.author.bot) {
+        msg.reply('A história é essa...');
+    }
   });
 
 app.login(token);
