@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-require('config/dotenv');
+require('dotenv').config();
 const token = process.env.TOKEN;
 const prefix = '!';
 
