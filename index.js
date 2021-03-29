@@ -13,7 +13,7 @@ app.on('message', (msg) => {
     if((msg.content === `${prefix}help` && msg.member.voice.channel && !msg.author.bot)) {
         const message = new Discord.MessageEmbed()
             .setTitle('BOM DIA, AMIGO!')
-            .setDescription('Tenho esses comandos por enquanto: !kerngritando')
+            .setDescription('Tenho esses comandos por enquanto: \n!kerngritando\n!dorime\n!segredogamer\n!tapao\n!tururu\n!kern-saiu-do-prata')
             .setFooter('NÃO COMETA EUTANÁSIA AINDA')
         msg.reply(message);
     }
