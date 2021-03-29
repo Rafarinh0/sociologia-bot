@@ -26,6 +26,38 @@ app.on('message', (msg) => {
         });
     };
 
+    if (msg.content === `${prefix}dorime` && msg.member.voice.channel && !msg.author.bot) {
+        msg.member.voice.channel.join().then(connection => {
+            const dispatcher = connection.play('./assets/sounds/dorime.mp3');
+            msg.reply('Dorimee... AMENOOOO')
+            dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
+        });
+    };
+
+    if (msg.content === `${prefix}segredogamer` && msg.member.voice.channel && !msg.author.bot) {
+        msg.member.voice.channel.join().then(connection => {
+            const dispatcher = connection.play('./assets/sounds/segredogamer.mp3');
+            msg.reply('Segredo **_gamer_**')
+            dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
+        });
+    };
+
+    if (msg.content === `${prefix}tapao` && msg.member.voice.channel && !msg.author.bot) {
+        msg.member.voice.channel.join().then(connection => {
+            const dispatcher = connection.play('./assets/sounds/tapao.mp3');
+            msg.reply('POU')
+            dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
+        });
+    };
+
+    if (msg.content === `${prefix}tururu` && msg.member.voice.channel && !msg.author.bot) {
+        msg.member.voice.channel.join().then(connection => {
+            const dispatcher = connection.play('./assets/sounds/tururu.mp3');
+            msg.reply('Tururuuuuu ru ru ruuuuuu tururu ru ru ruuuuuuuuu')
+            dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
+        });
+    };
+
     if (msg.content === `${prefix}kern-saiu-do-prata` && msg.member.voice.channel && !msg.author.bot) {
         msg.reply('A história é essa...');
     }
