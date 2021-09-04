@@ -13,7 +13,7 @@ app.on('message', (msg) => {
     if((msg.content === `${prefix}help` && msg.member.voice.channel && !msg.author.bot)) {
         const message = new Discord.MessageEmbed()
             .setTitle('BOM DIA, AMIGO!')
-            .setDescription('Tenho esses comandos por enquanto: \n!kerngritando\n!dorime\n!segredogamer\n!tapao\n!tururu\n!kern-saiu-do-prata')
+            .setDescription('Tenho esses comandos por enquanto: \n!kerngritando\n!dorime\n!segredogamer\n!tapao\n!tururu\n!kern-saiu-do-prata\n!tilapia\n!oxe')
             .setFooter('NÃO COMETA EUTANÁSIA AINDA')
         msg.reply(message);
     }
@@ -62,6 +62,14 @@ app.on('message', (msg) => {
         msg.member.voice.channel.join().then(connection => {
             const dispatcher = connection.play('./assets/sounds/tilapia.mp3');
             msg.reply('TILAPIA :fish:')
+            dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
+        });
+    }
+
+    else if (msg.content === `${prefix}oxe` && msg.member.voice.channel && !msg.author.bot) {
+        msg.member.voice.channel.join().then(connection => {
+            const dispatcher = connection.play('./assets/sounds/oxe.mp3');
+            msg.reply('ooooooxe')
             dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
         });
     }
