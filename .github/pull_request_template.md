@@ -10,7 +10,7 @@
 1. Open the terminal and go to the folder of this project
 
 1. In terminal:
-   1. `git checkout develop`
+   1. `git checkout master`
    1. `git pull`
    1. `git checkout <branch name>`
    1. `git pull origin <branch name>`
